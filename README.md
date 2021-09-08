@@ -1,3 +1,19 @@
+# React Memo Demo
+## Memo is a feature that help us to avoid re render children components that we don't need to re render when the parent component change (and re render), using this functionality the children components will re render only if the props change.
+
+In this demo we will dive into three interesting functionality that memo has in React.
+
+the First one is _React.memo()_ we add this instruction when we export our child component where we want to avoid the re render, with this simple instruction we will let React that we want to re render this component only when the props change.
+
+the second one is _useCallback()_ hook, this hook is used in the parent component, and works to send callback functions to the child component, because if we don't use this hook, even that our function is not changing, as the parent is re rendering the callback will be different after the re render of the parent this is a basic rule into Javascript and objects, using this hook we will save an instance of our callback and avoid the re render via callback.
+
+the third one is _useMemo()_ hook, this hook is used in the parent component, and works to send a value prop to the child component that we wan't to bee out of the props that re render our child component, as I mentioned above the memo will re render only if the props change, with this hook we can control when we want that an specific prop re render or avoid it re render.
+
+
+for more details about this specific demo read the README.md into the src folder.
+
+_Note:_ it's important to mentioned that memo has a memory cost that's why is suggested to use only in big applications or when we have a big mount of child components that we want to avoid the rerender.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
